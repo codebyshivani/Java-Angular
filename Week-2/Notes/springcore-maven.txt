@@ -1,0 +1,613 @@
+SPRING CORE & MAVEN NOTES
+
+SPRING FRAMEWORK
+================
+
+Spring is an open-source Java framework used to develop enterprise applications. It simplifies Java development by providing features like Dependency Injection, Inversion of Control, Transaction Management, Security, and Web Development.
+
+Features
+--------
+• Lightweight
+• Modular Architecture
+• Platform Independent
+• Easy Integration with Databases
+• Built-in Transaction Management
+• Supports Aspect-Oriented Programming (AOP)
+• Easy Testing
+• Highly Scalable
+
+Major Modules
+-------------
+• Spring Core
+• Spring Context
+• Spring AOP
+• Spring JDBC
+• Spring ORM
+• Spring MVC
+• Spring Security
+• Spring Boot
+• Spring Data JPA
+
+----------------------------------------------------------------
+
+SPRING CORE
+===========
+
+Spring Core is the foundation of the Spring Framework. It provides the core functionalities required to build loosely coupled Java applications.
+
+Main Responsibilities
+---------------------
+• Inversion of Control (IoC)
+• Dependency Injection (DI)
+• Bean Management
+• Spring Container
+
+Advantages
+----------
+• Loose Coupling
+• Better Code Reusability
+• Easier Testing
+• Better Maintainability
+• Less Object Creation
+• High Flexibility
+
+----------------------------------------------------------------
+
+INVERSION OF CONTROL (IoC)
+==========================
+
+Definition
+----------
+Inversion of Control (IoC) is a design principle where the responsibility of creating and managing objects is transferred from the programmer to the Spring Container.
+
+Without IoC
+-----------
+
+EmployeeService service = new EmployeeService();
+
+The programmer creates and manages the object.
+
+With IoC
+--------
+
+ApplicationContext context =
+SpringApplication.run(Application.class, args);
+
+EmployeeService service =
+context.getBean(EmployeeService.class);
+
+Spring creates and manages the object automatically.
+
+Advantages
+----------
+• Loose Coupling
+• Better Object Management
+• Easy Testing
+• Easy Maintenance
+
+Flow
+----
+
+Application
+
+↓
+
+Spring Container
+
+↓
+
+Creates Objects (Beans)
+
+↓
+
+Provides Objects When Needed
+
+----------------------------------------------------------------
+
+DEPENDENCY INJECTION (DI)
+=========================
+
+Definition
+----------
+Dependency Injection is the process of supplying one object (dependency) to another object automatically.
+
+Types of Dependency Injection
+-----------------------------
+1. Constructor Injection
+2. Setter Injection
+3. Field Injection (@Autowired)
+
+Example
+
+@Service
+public class EmployeeService {
+
+    @Autowired
+    private EmployeeRepository repository;
+
+}
+
+Spring automatically injects EmployeeRepository into EmployeeService.
+
+Advantages
+----------
+• Loose Coupling
+• Better Testing
+• Cleaner Code
+• Easier Maintenance
+
+----------------------------------------------------------------
+
+SPRING CONTAINER
+================
+
+The Spring Container is responsible for creating, configuring and managing Spring Beans.
+
+Responsibilities
+----------------
+• Creates Beans
+• Injects Dependencies
+• Manages Bean Lifecycle
+• Reads Configuration
+
+Types
+-----
+1. BeanFactory
+2. ApplicationContext
+
+BeanFactory
+-----------
+• Basic Container
+• Lazy Initialization
+• Used in small applications
+
+ApplicationContext
+------------------
+• Advanced Container
+• Supports Events
+• Supports Internationalization
+• Eager Initialization
+• Most commonly used
+
+Example
+
+ApplicationContext context =
+SpringApplication.run(Application.class, args);
+
+----------------------------------------------------------------
+
+SPRING BEANS
+============
+
+Definition
+----------
+A Bean is simply an object created and managed by the Spring Container.
+
+Example
+
+@Component
+public class Student {
+
+}
+
+Bean Lifecycle
+--------------
+
+Bean Creation
+
+↓
+
+Initialization
+
+↓
+
+Ready to Use
+
+↓
+
+Destruction
+
+----------------------------------------------------------------
+
+COMMON SPRING ANNOTATIONS
+=========================
+
+@SpringBootApplication
+----------------------
+Starts a Spring Boot application.
+
+@Component
+----------
+Marks a class as a Spring Bean.
+
+@Service
+---------
+Marks a Business Logic class.
+
+@Repository
+-----------
+Marks the Data Access Layer.
+
+@Controller
+-----------
+Returns Web Pages (Views).
+
+@RestController
+---------------
+Returns JSON/XML responses.
+
+@Autowired
+-----------
+Automatically injects dependencies.
+
+@Configuration
+--------------
+Java-based configuration class.
+
+@Bean
+-----
+Creates a Bean manually.
+
+----------------------------------------------------------------
+
+SPRING BOOT
+===========
+
+Spring Boot is built on top of the Spring Framework and simplifies application development through auto-configuration and starter dependencies.
+
+Features
+--------
+• Auto Configuration
+• Embedded Tomcat
+• Starter Dependencies
+• Production Ready Features
+• Minimal Configuration
+
+Advantages
+----------
+• Faster Development
+• Less Configuration
+• Standalone Applications
+• Easy Deployment
+• Easy Integration
+
+Application Flow
+----------------
+
+Client
+
+↓
+
+Controller
+
+↓
+
+Service
+
+↓
+
+Repository
+
+↓
+
+Database
+
+----------------------------------------------------------------
+
+MAVEN
+======
+
+Definition
+----------
+Maven is a Build Automation and Dependency Management tool used for Java projects.
+
+Responsibilities
+----------------
+• Manage Dependencies
+• Compile Source Code
+• Run Unit Tests
+• Package Applications
+• Create JAR/WAR Files
+• Download Required Libraries Automatically
+
+Advantages
+----------
+• Automatic Dependency Management
+• Standard Project Structure
+• Plugin Support
+• Easy Build Process
+• Cross Platform
+• Better Project Management
+
+----------------------------------------------------------------
+
+STANDARD MAVEN PROJECT STRUCTURE
+================================
+
+src
+
+├── main
+
+│   ├── java
+
+│   └── resources
+
+│
+
+└── test
+
+    └── java
+
+target
+
+pom.xml
+
+----------------------------------------------------------------
+
+POM.XML
+=======
+
+POM stands for Project Object Model.
+
+The pom.xml file contains all the project configuration.
+
+Contents
+--------
+• Project Information
+• Dependencies
+• Plugins
+• Build Configuration
+• Packaging Information
+
+Basic Structure
+
+<project>
+
+    <groupId>com.example</groupId>
+
+    <artifactId>demo</artifactId>
+
+    <version>1.0</version>
+
+    <dependencies>
+
+    </dependencies>
+
+</project>
+
+Important Elements
+------------------
+groupId
+    Unique organization name.
+
+artifactId
+    Project name.
+
+version
+    Current project version.
+
+dependencies
+    External libraries used.
+
+build
+    Build configuration.
+
+plugins
+    Additional build tools.
+
+----------------------------------------------------------------
+
+DEPENDENCIES
+============
+
+Dependencies are external libraries required by the project.
+
+Example
+
+<dependency>
+
+    <groupId>org.springframework.boot</groupId>
+
+    <artifactId>spring-boot-starter-web</artifactId>
+
+</dependency>
+
+Maven automatically downloads them from Maven Central Repository.
+
+----------------------------------------------------------------
+
+MAVEN REPOSITORIES
+==================
+
+Local Repository
+----------------
+Stored on your computer.
+
+Default Location
+
+C:\\Users\\<username>\\.m2\\repository
+
+Central Repository
+------------------
+Official online repository maintained by Maven.
+
+Remote Repository
+-----------------
+Company or organization-specific repository.
+
+Flow
+
+Project
+
+↓
+
+Local Repository
+
+↓
+
+Central/Remote Repository
+
+----------------------------------------------------------------
+
+MAVEN BUILD LIFECYCLE
+=====================
+
+validate
+
+↓
+
+compile
+
+↓
+
+test
+
+↓
+
+package
+
+↓
+
+verify
+
+↓
+
+install
+
+↓
+
+deploy
+
+Meaning
+-------
+
+validate
+Checks project correctness.
+
+compile
+Compiles Java source code.
+
+test
+Runs unit tests.
+
+package
+Creates JAR or WAR file.
+
+verify
+Performs quality checks.
+
+install
+Copies the package into the local repository.
+
+deploy
+Uploads the package to a remote repository.
+
+----------------------------------------------------------------
+
+COMMON MAVEN COMMANDS
+=====================
+
+mvn compile
+------------
+Compiles the project.
+
+mvn clean
+----------
+Deletes the target folder.
+
+mvn test
+---------
+Runs all test cases.
+
+mvn package
+------------
+Creates a JAR/WAR file.
+
+mvn install
+------------
+Installs the package into the local repository.
+
+mvn spring-boot:run
+-------------------
+Runs the Spring Boot application.
+
+----------------------------------------------------------------
+
+SPRING VS SPRING BOOT
+=====================
+
+Spring Framework
+----------------
+• Requires more configuration
+• External Tomcat required
+• XML/Java configuration
+• Slower setup
+
+Spring Boot
+-----------
+• Auto Configuration
+• Embedded Tomcat
+• Starter Dependencies
+• Minimal Configuration
+• Faster Development
+
+----------------------------------------------------------------
+
+COMMON ERRORS
+=============
+
+Bean Not Found
+--------------
+Reason
+• Missing @Component
+• Missing @Service
+• Missing @Repository
+
+Solution
+• Add the appropriate annotation.
+• Ensure package scanning includes the class.
+
+------------------------------------------------------------
+
+Port Already in Use
+-------------------
+Reason
+• Another application is using port 8080.
+
+Solution
+• Stop the existing application.
+• Or change the port.
+
+Example
+
+server.port=8081
+
+------------------------------------------------------------
+
+Dependency Not Found
+--------------------
+Reason
+• Missing dependency in pom.xml.
+
+Solution
+• Add the required dependency.
+• Run:
+
+mvn clean install
+
+------------------------------------------------------------
+
+Build Failure
+-------------
+Reason
+• Syntax Errors
+• Missing Dependencies
+• Incorrect pom.xml
+
+Solution
+• Fix compilation errors.
+• Reload Maven Project.
+• Run:
+
+mvn clean package
+
