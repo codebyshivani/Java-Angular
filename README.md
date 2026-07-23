@@ -1,4 +1,4 @@
-# Deepak-A-8000905-Java-FSE-Cognizant
+# Shivani-A-8000905-Java-FSE-Cognizant
 
 ### **Cognizant Digital Nurture 5.0 – Java (FSE)**
 
@@ -36,7 +36,7 @@ This repository documents my learning journey through the **Cognizant Digital Nu
 ## Repository Structure
 
 ```text
-📦 Deepak-A-8000905-Java-FSE-Cognizant
+📦 Shivani-A-8000905-Java-FSE-Cognizant
 │
 ├── 📁 Week-1
 ├── 📁 Week-2
@@ -63,11 +63,11 @@ This repository documents my learning journey through the **Cognizant Digital Nu
 
 <div align="center">
 
-### Deepak A
+### Shivani
 
-**B.Tech – Computer Science & Business Systems**
+**B.Tech – Computer Science & Engineering**
 
-[GitHub](https://github.com/Deepak-adev) • [LinkedIn](https://www.linkedin.com/in/deepakcsbs)
+
 
 *"Code. Learn. Build. Improve."*
 
